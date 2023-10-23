@@ -1,4 +1,4 @@
-module stash.logicmonitor.com/dev/log-intelligence.git/pkg/pool
+module github.com/vkumbhar94/pondutil
 
 go 1.21
 
