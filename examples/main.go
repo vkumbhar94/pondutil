@@ -3,13 +3,12 @@ package main
 import (
 	"context"
 	"fmt"
-	"stash.logicmonitor.com/dev/log-intelligence.git/pkg/pool"
 	"sync"
 )
 
 func main() {
-	p := pool.New(2, 3)
-	result, err := pool.RunTasksWithSupplierFunc[int64](p, context.Background(), func(ch chan<- pool.Task) {
+	p := pondutil.New(2, 3)
+	result, err := pondutil.RunTasksWithSupplierFunc[int64](p, context.Background(), func(ch chan<- pondutil.Task) {
 		wg := sync.WaitGroup{}
 		wg.Add(2)
 		go func() {
